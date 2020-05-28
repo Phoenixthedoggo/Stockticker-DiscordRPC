@@ -3,6 +3,9 @@ Displays the current stock price of NET (Cloudflare) as your Discord Rich Presen
 
 I made this as a joke, as I purchased a few shares of NET (Cloudflare) and wanted to show my "loyalty" by making my rich presence the current stock price.
 
+To run, simply copy the repo into a folder, (I'm assuming you already have NodeJS and Git Installed if we're working with JS.) and run ```npm i```, then run ```node index.js```.
+To quit / stop, press: ```ctrl + c```
+
 ### Demonstration of RPC (Rich Presence In Action)
 (Note: Yahoo stocks don't reflect after-hours price changes, so that's why it's a cent off in the next picture.)
 
