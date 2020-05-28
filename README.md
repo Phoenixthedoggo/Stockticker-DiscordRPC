@@ -11,3 +11,5 @@ I made this as a joke, as I purchased a few shares of NET (Cloudflare) and wante
 ### Robinhood View
 
 ![Robinhood NET stock Preview](https://raw.githubusercontent.com/Phoenixthedoggo/Stockticker-DiscordRPC/master/preview/stock_demo.png)
+
+Thank you @Nexure for helping me debug my code! I was a bit rusty with JS before working on this project as my last JS project was an old music RPC plugin lol.
