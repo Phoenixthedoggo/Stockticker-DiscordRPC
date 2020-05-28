@@ -1,26 +1,21 @@
+
+// --- DEVELOPED / CREATED BY PHOENIXTHEDOGGO / PHOENIX SHEPHERD, WITH THE ASSISTANCE OF JACK FOX (https://github.com/Nexure)
+
 var yahooStockPrices = require('yahoo-stock-prices');
-var NETprice = "";
+var NETprice = ""; // --- So like, "NETprice" is a variable I used to determine what the current stock price is at any give time so that I can fill the STATE field in RPC.
 const client = require('discord-rich-presence')('715252355209232435');
-var starttime = new Date();
-
-// start month, start day, start year, end month, end day, end year, ticker, frequency
-
-// month [ 0 -> 11 ] = [ January -> December ]
-
 
 function updatePrices(){
-yahooStockPrices.getCurrentPrice('NET', function(err, price){
+yahooStockPrices.getCurrentPrice('NET', function(err, price){ // --- 'NET' is the stock name. Replace with whatever you want to track :3
 
-    // console.log(price);
-	NETprice=(price).toFixed(2);
-	console.log(NETprice)
+	NETprice=(price).toFixed(2); // --- So feel free to rename / replace it.
 
-// --- DISCORD
+// --- DISCORD RPC
 
 	client.updatePresence({
-		state: `$${NETprice}/share`,
-		details: 'Currently Worth:',
-		largeImageKey: 'cf',
+		state: `$${NETprice}/share`, // -- And here.
+		details: 'Currently Worth:', 
+		largeImageKey: 'cf', // --- cf is an asset on Discord's Developer Portal. Replace with that you name your asset.
 		instance: true,
 	  });
 
@@ -28,7 +23,7 @@ yahooStockPrices.getCurrentPrice('NET', function(err, price){
 }
 
 updatePrices()
-setInterval(() => {
+setInterval(() => { // --- Don't touch this, it's the auto-check and replace timer.
 	updatePrices();
 }, 15e3);
 
