@@ -1,21 +1,22 @@
 
-// --- DEVELOPED / CREATED BY PHOENIXTHEDOGGO / PHOENIX SHEPHERD, WITH THE ASSISTANCE OF JACK FOX (https://github.com/Nexure)
+// --- DEVELOPED / CREATED BY PHOENIXSHEPPY / PHOENIX SHEPHERD, WITH THE ASSISTANCE OF JACK FOX (https://github.com/Nexure)
 
 var yahooStockPrices = require('yahoo-stock-prices');
-var NETprice = ""; // --- So like, "NETprice" is a variable I used to determine what the current stock price is at any give time so that I can fill the STATE field in RPC.
-const client = require('discord-rich-presence')('715252355209232435');
+var stockPrice = ""; // --- So like, "stockPrice" is a variable I used to determine what the current stock price is at any give time so that I can fill the STATE field in RPC.
+const client = require('discord-rich-presence')('803082200550735883');
+var stockTicker = "bb"; // --- This is the stock symbol of the stock you want to track, for instance I want Blackberry, so I put "bb".
 
 function updatePrices(){
-yahooStockPrices.getCurrentPrice('NET', function(err, price){ // --- 'NET' is the stock name. Replace with whatever you want to track :3
+yahooStockPrices.getCurrentPrice(stockTicker, function(err, price){
 
-	NETprice=(price).toFixed(2); // --- So feel free to rename / replace it.
+	stockPrice=(price).toFixed(2);
 
 // --- DISCORD RPC
 
 	client.updatePresence({
-		state: `$${NETprice}/share`, // -- And here.
+		state: `$${stockPrice}/share`,
 		details: 'Currently Worth:', 
-		largeImageKey: 'cf', // --- cf is an asset on Discord's Developer Portal. Replace with that you name your asset.
+		largeImageKey: 'bb', // --- bb is an asset on Discord's Developer Portal. Replace with that you name your asset.
 		instance: true,
 	  });
 
