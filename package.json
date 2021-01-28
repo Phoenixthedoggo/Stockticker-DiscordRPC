@@ -11,7 +11,7 @@
   "dependencies": {
     "discord-rich-presence": "0.0.8",
     "discord-rpc": "^3.1.1",
-    "electron": "^9.0.0",
+    "electron": "^9.4.0",
     "yahoo-stock-prices": "^1.0.1"
   }
 }
